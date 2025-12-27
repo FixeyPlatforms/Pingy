@@ -55,14 +55,14 @@ void loop() {
 
 ### Grown in the Labs of
 
-<div align="center">
-  <img src="https://i.postimg.cc/bv0m0NTv/Untitled-design-8-removebg-preview.png" alt="Fixey Platforms Logo" width="150"/>
+<div align="start">
+  <img src="https://i.postimg.cc/8zxVB0Bt/Untitled-design-7-enhanced-removebg-preview.png" alt="Fixey Platforms Logo" width="90"/>
   <h2>Fixey Platforms</h2>
   <p><strong>World's Best Social Tech, AI & Robotics Software Company</strong></p>
   
   <p>
     Pingy is an Open Source initiative by <strong>Fixey Platforms</strong>.<br>
-    We build the future with <strong>Metra</strong>, <strong>AlgoChat</strong>, and <strong>FixeyEDU</strong>.
+    We build the future with <strong>AlgoChat</strong>, and <strong>FixeyEDU</strong>.
   </p>
 
   <p><strong>Leadership Team</strong><br>

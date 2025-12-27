@@ -1,73 +1,72 @@
-<div align="center">
-  <img src="https://i.postimg.cc/bv0m0NTv/Untitled-design-8-removebg-preview.png" alt="Fixey Platforms Logo" width="200"/>
-  <h1>Fixey Platforms</h1>
-  <p><strong>World's Best Social Tech, AI & Robotics Software Company</strong></p>
+# Pingy Library
 
-  [![Website](https://img.shields.io/website?url=https%3A%2F%2Ffixeyplatforms.com&label=fixeyplatforms.com&style=flat-square&logo=google-earth&logoColor=white)](https://fixeyplatforms.com)
-  [![Email](https://img.shields.io/badge/Email-Contact%20Us-blue?style=flat-square&logo=gmail)](mailto:contact@fixeyplatforms.com)
-</div>
+**The Easiest and Most Powerful Ultrasonic Sensor Library for Arduino**
 
----
+Pingy is a robust, object-oriented library designed for Arduino, ESP32, and ESP8266. It simplifies ultrasonic sensor (HC-SR04) usage by handling all complexity internally, offering features like **auto-initialization**, **multi-sensor support**, and **instant unit conversion**.
 
-### About Us
+## Key Features
 
-**Fixey Platforms** is a world-class software leader specializing in **Social Technology, Artificial Intelligence, Robotics, and High-Performance Backend Engineering**. We are dedicated to transforming the future through next-generation software ecosystems like **Metra** and **AlgoChat**.
+*   **Auto-Initialization**: No need for `pinMode` or setup logic. It just works.
+*   **Unit Conversion**: Get distance in **Centimeters (CM)** or **Inches (IN)** instantly.
+*   **Multi-Sensor Support**: Easily control multiple sensors (Front, Back, Left, Right) simultaneously.
+*   **Non-Blocking Logic**: Optimized for fast performance in robotics and industrial applications.
 
-Under the visionary leadership of **CEO Nadun Malinga** and **CTO Chenura Oshada**, we deliver enterprise-grade solutions that redefine industry standards.
+## Installation
 
-### Our Ecosystem
+1.  Open the **Arduino IDE**.
+2.  Go to **Tools** > **Manage Libraries...**
+3.  Search for **"Pingy"**.
+4.  Click **Install**.
 
-*   **Fixey Software Solutions:** The engineering powerhouse behind our global enterprise applications.
-*   **FixeyEDU:** Empowering the next generation through accessible, high-quality tech education.
-*   **Pingy:** Our contribution to the Open Source world – The easiest and most powerful Arduino Ultrasonic Library.
-
-### Tech Stack and Expertise
-
-*   **Core Systems:** Rust, Go (Golang), C++, Java
-*   **AI & Robotics:** PyTorch, TensorFlow, ROS (Robot Operating System), Arduino, ESP32
-*   **Web & Cloud:** Next.js, React, Laravel, AWS, Scalable Microservices
-
-### Leadership Team
-
-*   **Nadun Malinga** – CEO & Founder
-*   **Chenura Oshada** – Co-Founder, CTO & Distinguished Engineer
-*   **Kaveesha Waragoda** – COO
-*   **Thisagi Dahamsa** – CMO
-
----
-
-## Pingy Library Usage
-
-This repository contains the **Pingy** library.
-
-### Installation
-
-1.  Open **Arduino IDE**.
-2.  Go to **Tools > Manage Libraries**.
-3.  Search for **Pingy**.
-4.  Install.
-
-### Quick Start
+## Quick Usage
 
 ```cpp
 #include <Pingy.h>
 
-// Initialize sensor (Trigger, Echo)
-Pingy mySensor(9, 10);
+// Initialize Sensor (Trigger Pin = 9, Echo Pin = 10)
+Pingy sensor(9, 10);
 
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
+  // Get distance in Centimeters
+  float dist = sensor.read(); 
+  
   Serial.print("Distance: ");
-  Serial.print(mySensor.read()); // Reads in CM
+  Serial.print(dist);
   Serial.println(" cm");
+  
   delay(100);
 }
 ```
 
+## API Reference
+
+*   `Pingy(trig, echo)`: Constructor to define pins.
+*   `read()`: Returns distance in **CM** (default).
+*   `readCM()`: Returns distance in **CM**.
+*   `readIN()`: Returns distance in **Inches**.
+
 ---
+
+<br>
+
+### Grown in the Labs of
+
 <div align="center">
+  <img src="https://i.postimg.cc/bv0m0NTv/Untitled-design-8-removebg-preview.png" alt="Fixey Platforms Logo" width="150"/>
+  <h2>Fixey Platforms</h2>
+  <p><strong>World's Best Social Tech, AI & Robotics Software Company</strong></p>
+  
+  <p>
+    Pingy is an Open Source initiative by <strong>Fixey Platforms</strong>.<br>
+    We build the future with <strong>Metra</strong>, <strong>AlgoChat</strong>, and <strong>FixeyEDU</strong>.
+  </p>
+
+  <p><strong>Leadership Team</strong><br>
+  Nadun Malinga (CEO) • Chenura Oshada (CTO) • Kaveesha Waragoda (COO) • Thisagi Dahamsa (CMO)</p>
+  
   <p>© Fixey Platforms. All Rights Reserved.</p>
 </div>

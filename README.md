@@ -1,29 +1,31 @@
-# Pingy Library
+# Pingy
 
-**The Easiest and Most Powerful Ultrasonic Sensor Library for Arduino**
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
-Pingy is a robust, object-oriented library designed for Arduino, ESP32, and ESP8266. It simplifies ultrasonic sensor (HC-SR04) usage by handling all complexity internally, offering features like **auto-initialization**, **multi-sensor support**, and **instant unit conversion**.
+**The easiest and most powerful object-oriented Ultrasonic Sensor library for Arduino.**
 
-## Key Features
+Pingy simplifies usage of ultrasonic sensors (HC-SR04) with auto-initialization, multi-sensor support, and instant unit conversion.
 
-*   **Auto-Initialization**: No need for `pinMode` or setup logic. It just works.
-*   **Unit Conversion**: Get distance in **Centimeters (CM)** or **Inches (IN)** instantly.
-*   **Multi-Sensor Support**: Easily control multiple sensors (Front, Back, Left, Right) simultaneously.
-*   **Non-Blocking Logic**: Optimized for fast performance in robotics and industrial applications.
+## Features
+
+- **Auto-Initialization:** No setup code required.
+- **Unit Conversion:** Get readings in **CM** or **Inches** instantly.
+- **Multi-Sensor Support:** Easily handle multiple sensors.
+- **Lightweight:** Optimized for Arduino, ESP32, and ESP8266.
 
 ## Installation
 
-1.  Open the **Arduino IDE**.
+1.  Open **Arduino IDE**.
 2.  Go to **Tools** > **Manage Libraries...**
 3.  Search for **"Pingy"**.
 4.  Click **Install**.
 
-## Quick Usage
+## Usage
 
 ```cpp
 #include <Pingy.h>
 
-// Initialize Sensor (Trigger Pin = 9, Echo Pin = 10)
+// Initialize Sensor (Trigger Pin, Echo Pin)
 Pingy sensor(9, 10);
 
 void setup() {
@@ -31,42 +33,23 @@ void setup() {
 }
 
 void loop() {
-  // Get distance in Centimeters
-  float dist = sensor.read(); 
-  
   Serial.print("Distance: ");
-  Serial.print(dist);
+  Serial.print(sensor.read()); // Default: CM
   Serial.println(" cm");
-  
   delay(100);
 }
 ```
 
 ## API Reference
 
-*   `Pingy(trig, echo)`: Constructor to define pins.
-*   `read()`: Returns distance in **CM** (default).
-*   `readCM()`: Returns distance in **CM**.
-*   `readIN()`: Returns distance in **Inches**.
+- `Pingy(trig, echo)`: Constructor.
+- `read()`: Returns distance in cm.
+- `readIN()`: Returns distance in inches.
 
 ---
 
-<br>
+### License
 
-### Grown in the Labs of
+This project is open-sourced software licensed under the **[MIT license](https://opensource.org/licenses/MIT)**.
 
-<div align="start">
-  <img src="https://i.postimg.cc/8zxVB0Bt/Untitled-design-7-enhanced-removebg-preview.png" alt="Fixey Platforms Logo" width="90"/>
-  <h2>Fixey Platforms</h2>
-  <p><strong>World's Best Social Tech, AI & Robotics Software Company</strong></p>
-  
-  <p>
-    Pingy is an Open Source initiative by <strong>Fixey Platforms</strong>.<br>
-    We build the future with <strong>AlgoChat</strong>, and <strong>FixeyEDU</strong>.
-  </p>
-
-  <p><strong>Leadership Team</strong><br>
-  Nadun Malinga (CEO) • Chenura Oshada (CTO) • Kaveesha Waragoda (COO) • Thisagi Dahamsa (CMO)</p>
-  
-  <p>© Fixey Platforms. All Rights Reserved.</p>
-</div>
+Developed by **Team Fixey** at **[Fixey Platforms](https://fixeyplatforms.com)**.
